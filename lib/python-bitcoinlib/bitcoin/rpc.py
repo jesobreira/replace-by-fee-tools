@@ -521,8 +521,6 @@ class Proxy(BaseProxy):
         r2 = []
         for unspent in r:
             unspent['outpoint'] = COutPoint(lx(unspent['txid']), unspent['vout'])
-            del unspent['txid']
-            del unspent['vout']
 
             unspent['address'] = CBitcoinAddress(unspent['address'])
             unspent['scriptPubKey'] = CScript(unhexlify(unspent['scriptPubKey']))
